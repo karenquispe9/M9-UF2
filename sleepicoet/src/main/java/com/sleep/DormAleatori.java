@@ -3,27 +3,26 @@ package com.sleep;
 import java.util.Random;
 
 public class DormAleatori extends Thread {
-    private final long startTime; // Tiempo de creación del hilo
-    private final Random random; // Generador de números aleatorios
+    private final long tiempoActual; //tiempo de creación del hilo
+    private final Random random; 
 
     // Constructor
     public DormAleatori(String name) {
-        super(name); // Establece el nombre del hilo
-        this.startTime = System.currentTimeMillis(); // Registra el momento de creación
-        this.random = new Random(); // Inicializa el generador aleatorio
+        super(name); // nombre del hilo
+        this.tiempoActual = System.currentTimeMillis(); // registro momento de creación
+        this.random = new Random(); 
     }
 
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
-            int intervalAleatori = random.nextInt(1000); // Tiempo aleatorio entre 0 y 999 ms
-            long totalTime = System.currentTimeMillis() - startTime; // Tiempo total desde la creación
+            int intervalAleatori = random.nextInt(1000); // tiempo aleatorio entre 0 y 999 ms
+            long totalTime = System.currentTimeMillis() - tiempoActual; //tiempo total desde la creación
             
-            // Imprimir información del hilo
             System.out.printf("%s(%d) a dormir %dms total %dms%n", 
                 getName(), i, intervalAleatori, totalTime);
             
-            // Dormir el tiempo aleatorio
+            // Dormir
             try {
                 Thread.sleep(intervalAleatori);
             } catch (InterruptedException e) {
@@ -42,7 +41,7 @@ public class DormAleatori extends Thread {
         pep.start();
 
         // Mensaje final del main
-        System.out.println("-- Fi de main -----------");
+        System.out.println("------ Finalizado ---------");
     }
 }
 
