@@ -1,21 +1,29 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Coet coet = new Coet(); // Crea una instancia del coet
-        coet.arranca(); // Arranca los motores
+        Coet coet = new Coet(); // Crear una instancia del coet
+        coet.arranca(); // Arrancar los motores
 
-        // Cambios automáticos de potencia predefinidos
-        int[] potencies = {3, 7, 5, 0}; // Secuencia de potencias
-        for (int potencia : potencies) {
-            coet.passaAPotencia(potencia);
+        Scanner scanner = new Scanner(System.in);
+        int potencia;
 
-            // Espera 3 segundos entre cada cambio
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                System.err.println("Interrupció en el programa principal.");
+        try {
+            while (true) {
+                System.out.print("Introduïu la potència objectiu (0-10): ");
+                potencia = scanner.nextInt();
+                if (potencia == 0) {
+                    coet.passaAPotencia(0); // Ajustar potencia a 0
+                    break; // Finalizar el programa
+                }
+                coet.passaAPotencia(potencia);
             }
+        } catch (Exception e) {
+            System.out.println("Error en la entrada.");
+        } finally {
+            coet.atura(); // Detener los motores antes de salir
+            System.out.println("Finalitzant simulació...");
+            scanner.close();
         }
-
-        System.out.println("Finalitzant simulació...");
     }
 }
