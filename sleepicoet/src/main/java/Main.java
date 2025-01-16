@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Coet coet = new Coet(); // Crear una instancia del coet
+        Coet coet = new Coet(); //  instancia del coet
         coet.arranca(); // Arrancar los motores
 
         Scanner scanner = new Scanner(System.in);
