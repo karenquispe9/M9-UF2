@@ -20,9 +20,12 @@ public class Treballador extends Thread {
     }
 
     public void cobra() {
+        cobrat += nouAnualBrut / 12.0f;
+
     }
 
     public void pagaImpostos() {
+        cobrat -= (nouAnualBrut / 12.0f) * 0.24f;
     }
 
     
@@ -32,10 +35,13 @@ public class Treballador extends Thread {
     }
 
     public float getCobrat() {
+        return cobrat;
+
        
     }
 
   
     public int getEdat() {
+        return edatActual;
     }
 }
