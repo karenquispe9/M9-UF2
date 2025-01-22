@@ -31,6 +31,16 @@ public class Treballador extends Thread {
     
     @Override
     public void run() {
+        for (edatActual = edatIniciTreball; edatActual <= edatFiTreball; edatActual++) {
+            cobra();
+            pagaImpostos();
+            try {
+                // fa com un any de treball
+                Thread.sleep(rnd.nextInt(100)); 
+            } catch (InterruptedException e) {
+                System.err.println("Error en " + getName());
+            }
+        }
        
     }
 
