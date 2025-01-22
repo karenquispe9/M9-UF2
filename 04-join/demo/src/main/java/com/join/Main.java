@@ -2,6 +2,6 @@ package com.join;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
+        Administracio admin = new Administracio();
+        admin.iniciaSimulacio();    }
 }

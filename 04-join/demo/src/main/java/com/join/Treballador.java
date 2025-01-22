@@ -1,3 +1,4 @@
+package com.join;
 import java.util.Random;
 
 public class Treballador extends Thread {
