@@ -26,7 +26,7 @@ public class Assistent extends Thread {
                 } else {
                     esdeveniment.cancelaReserva(this);
                 }
-                Thread.sleep(random.nextInt(1000));
+                Thread.sleep(random.nextInt(2000));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
