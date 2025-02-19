@@ -1,19 +1,23 @@
 package com.iticbcn;
 
-public class Forquilla {
-    private int numeroPropietari;
+
+class Forquilla {
+    private int propietari;
     public static final int LLIURE = -1;
 
-    public Forquilla(int numero) {
-        this.numeroPropietari = numero;
+    public Forquilla() {
+        this.propietari = LLIURE;
     }
 
-    public void setNumeroPropietari(int numero) {
-        this.numeroPropietari = numero;
+    public synchronized void agafar(int filosof) throws InterruptedException {
+        while (propietari != LLIURE) {
+            wait();
+        }
+        propietari = filosof;
     }
 
-    public int getNumeroPropietari() {
-        return numeroPropietari;
+    public synchronized void deixar() {
+        propietari = LLIURE;
+        notifyAll();
     }
 }
-
