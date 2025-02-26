@@ -1,14 +1,15 @@
 # M9-UF2
 UF2: Processos y fils
 
-#09-El sopar dels filòsofs 3 (amb Lock)
-CONCEPTE CLAU
-L'idea es simular a diferents filofos que pensen i menjen, pero per menjar necesiten dues forquilles. Pero les forquilles son compartides amb els altres filosof, el que pot portar condicions de carrera o deadlocks.
-Per poder evitar aquest bloquejos i asegura una correcta sincornitzció, utilitzarem ReentrantLock, una clase Java per portar exclusions mutues en recursos compartits.
+# 09 - Sopar dels filòsofs (amb Lock)
 
-CLASSES
-1- Forquilla: Representa la forquilla amb la que el filosof menja, amb un ReentrantLock per bloquejar quan un filosf l'utilitza.
+## 📌 Concepte clau  
+Simulem el problema dels **filòsofs que mengen i pensen**. Per menjar, necessiten dues forquilles, però aquestes són compartides, cosa que pot generar **condicions de carrera** o **deadlocks**.  
 
-2- Filosof: Represnta a cada filósof, el qual intentara agafar dos forquilles per menjar i després els allivera.
+Per evitar bloquejos i garantir una sincronització correcta, utilitzem **ReentrantLock**, una classe de Java que permet exclusions mútues en recursos compartits.  
 
-3- Taula: Administra els filosofs i les forquilles.
+## 🏠 Classes  
+
+ **1 - Forquilla**: Conté un `ReentrantLock` per gestionar-ne l'ús exclusiu.  
+ **2 - Filòsof**: Agafa dues forquilles per menjar i després les allibera.  
+ **3 - Taula**: Administra filòsofs i forquilles per coordinar la simulació.
