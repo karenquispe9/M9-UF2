@@ -1,13 +1,13 @@
 package com.iticbcn;
 
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.Random;
+
 
 public class Forquilla {
     private final int num;
-    private final Lock bloqueig = new ReentrantLock() 
-    
+    private final Lock bloqueig = new ReentrantLock();
+
     public Forquilla(int num) {
         this.num = num;
     }
@@ -16,16 +16,11 @@ public class Forquilla {
         return num;
     }
 
-    public boolean agafar(){
+    public boolean agafar() {
         return bloqueig.tryLock();
     }
 
-    public void deixar(){
+    public void deixar() {
         bloqueig.unlock();
     }
-
-
-
-
-
 }
