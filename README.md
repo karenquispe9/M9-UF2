@@ -13,3 +13,6 @@ Per evitar bloquejos i garantir una sincronització correcta, utilitzem **Reentr
  **1 - Forquilla**: Conté un `ReentrantLock` per gestionar-ne l'ús exclusiu.  
  **2 - Filòsof**: Agafa dues forquilles per menjar i després les allibera.  
  **3 - Taula**: Administra filòsofs i forquilles per coordinar la simulació.
+
+## Salida por pantalla
+![Captura](img/salidaPantalla09-FilosofsLock.png)

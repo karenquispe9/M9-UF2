@@ -15,8 +15,7 @@ public class Filosof extends Thread {
         this.esquerra = esquerra;
         this.dreta = dreta;
         this.gana = 0;
-        resetGana();
-
+        iniciGana = System.currentTimeMillis();
     }
     
     @Override
@@ -25,9 +24,8 @@ public class Filosof extends Thread {
             while (true) {
                 pensar();
                 menjar();
-                gana = calcularGana();
-                System.out.println("Fil" + id + " menja amb gana " + gana);
-                resetGana();
+                calcularGana();
+               
             }
             
         } catch (InterruptedException e) {
@@ -42,40 +40,54 @@ public class Filosof extends Thread {
     }
 
     private void menjar() throws InterruptedException {
-        if (agafarForquilles()){
-            System.out.println("Fil" + id + " té forquilles esq("+ esquerra.getNum() +") dreta ("+ dreta.getNum() +")");
-            Thread.sleep(random.nextInt(1000)+1000);
-            deixarForquilles();
+        while (!agafarForquilles()) {
+            Thread.sleep(random.nextInt(500) + 500); 
         }
+        fiGana = System.currentTimeMillis();
+        gana = calcularGana();
+        int ganaEnSegons = (int) (gana / 1000); 
+        System.out.println("Fil" + id + " té forquilles esq("+ esquerra.getNum() +") dreta ("+ dreta.getNum() +")");
+        System.out.println("Fil" + id + " menja amb gana " + ganaEnSegons);
+        Thread.sleep(random.nextInt(1000) + 1000); // Menja entre 1s i 2s
+        System.out.println("Fil" + id + " ha acabat de menjar");
+        deixarForquilles();
+        resetGana();
 
     }
 
-    private boolean agafarForquilles() throws InterruptedException{
-        if (!esquerra.agafar()){
-            return false;
+    private boolean agafarForquilles() throws InterruptedException {
+        if (agafarForquillaEsquerra()) {
+            if (agafarForquillaDreta()) {
+                return true;
+            } else {
+                esquerra.deixar();
+            }
         }
-
-        if (!dreta.agafar()){
-            esquerra.deixar();
-            return false;
-        }
-        return true;
+        return false;
     }
 
-    private void deixarForquilles(){
-        esquerra.deixar();
+    private boolean agafarForquillaEsquerra() {
+        return esquerra.agafar();
+    }
+
+    private boolean agafarForquillaDreta() {
+        return dreta.agafar();
+    }
+
+    private void deixarForquilles() {
         dreta.deixar();
-        System.out.println("Fil" + id + " deixa les forquilles " );
+        esquerra.deixar();
+        System.out.println("Fil" + id + " deixa les forquilles");
     }
-    
-    private long calcularGana(){
+
+    private long calcularGana() {
         return fiGana - iniciGana;
-
+        
     }
 
-    private void resetGana(){
+    private void resetGana() {
         iniciGana = System.currentTimeMillis();
-        gana = 0;
+        //gana = 0;
     }
 
 }
