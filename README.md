@@ -18,18 +18,19 @@ Per evitar bloquejos i garantir una sincronització correcta, utilitzem **Reentr
 ![Captura](img/salidaPantalla09-FilosofsLock.png)
 
 
-# 11 - El barber Mandros
+# 11 - El barber Mandrós
 
 ## Concepte clau  
+Simulem el problema clàssic del **barber mandrós**, on un barber dorm fins que arriba un client. Si hi ha clients, els atén un per un, i quan la barberia es buida, torna a dormir. La barberia té un nombre limitat de cadires per a l'espera, i els clients que troben la barberia plena se'n van.  
 
-
+Per gestionar la concurrència i la sincronització dels fils, utilitzem **synchronized** i l'objecte de sincronització `condBarber` per coordinar el barber i els clients. Això evita **condicions de carrera** i garanteix que el barber no treballi si no hi ha clients esperant.
 
 ## Classes  
 
- **1 - name**:
- **2 - name**:   
- **3 - name**: 
+ **1 - Barber**: Representa el barber, que espera clients i els talla els cabells en un temps aleatori entre 0,9s i 1s. Quan no hi ha clients, s'adorm fent `wait()`.  
+ **2 - Barberia**: Administra la cua d'espera dels clients i té un límit de cadires. També coordina la interacció entre clients i el barber amb `notify()`.  
+ **3 - Client**: Representa els clients que arriben a la barberia. Si hi ha lloc, s'asseuen a l'espera; si no, se'n van.  
 
 ## Salida por pantalla
-![Captura]
+![Captura](img/salidaPantalla11-BarberMandros.png)
 
