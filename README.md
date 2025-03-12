@@ -16,3 +16,20 @@ Per evitar bloquejos i garantir una sincronització correcta, utilitzem **Reentr
 
 ## Salida por pantalla
 ![Captura](img/salidaPantalla09-FilosofsLock.png)
+
+
+# 11 - El barber Mandros
+
+## Concepte clau  
+
+
+
+## Classes  
+
+ **1 - name**:
+ **2 - name**:   
+ **3 - name**: 
+
+## Salida por pantalla
+![Captura]
+
