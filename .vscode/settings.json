@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "fils-01",
-        "08-filosof_wait/src/main/java/com/iticbcn"
+        "08-filosof_wait/src/main/java/com/iticbcn",
+        "01-Fils"
     ]
 }
