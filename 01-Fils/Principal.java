@@ -7,10 +7,6 @@ public class Principal {
         juan.setName("Juan");
         pepe.setName("Pepe");
 
-        //prioritzem un fil respecte a l'altre
-        juan.setPriority(Thread.MIN_PRIORITY);
-        pepe.setPriority(Thread.MAX_PRIORITY);
-
         juan.start(); 
         pepe.start();
 
