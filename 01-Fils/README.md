@@ -15,7 +15,7 @@ Programa en Java que muestra tres comportamientos diferentes de ejecución de hi
 ![Comportamiento 1 - Fil.java](https://github.com/karenquispe9/M9-UF2/blob/b4d60347d04d9664ec3b916b2ce7d19143eb2358/img/comportamiento1_01fils.png) 
 
 ### Comportamiento 2
-![Comportamiento 2 - Fil.java](https://raw.githubusercontent.com/karenquispe9/M9-UF2/b4d60347d04d9664ec3b916b2ce7d19143eb2358/img/comportamiento2_01fils.png) 
+![Comportamiento 2 - Fil.java](https://github.com/karenquispe9/M9-UF2/blob/d333d05b32ce431cd6ca9ec824d5005ef2f1138e/img/comportamiento2_01fils.png) 
 
 
 ### Comportamiento 3
