@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
         "08-filosof_wait/src/main/java/com/iticbcn",
+        "05-Sincronitzacio/src",
         "02-Futbol",
         "01-Fils",
-        "05-Sincronitzacio/src"
+        "12-BanysUnisex/fils/src/main/java/com/iticbcn"
     ]
 }

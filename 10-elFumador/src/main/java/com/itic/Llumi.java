@@ -1,6 +1,4 @@
 package com.itic;
 
-
-public class Llumi {
-
-}
+//aquestes classes son "marcadors" que representen els recursos que es poden utilitzar
+public class Llumi {}
